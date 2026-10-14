@@ -1,0 +1,52 @@
+schema_version: 1
+reviewed_on: '2026-09-28'
+licenses:
+  PANASONIC_NCR18650B:
+    license: CC-BY-4.0
+    evidence: https://zenodo.org/records/7896429
+    attribution: 'Galijatovic et al., Zenodo, DOI 10.5281/zenodo.7896429'
+    training_allowed: true
+    raw_data_downloaded_cells: 7
+    training_eligible: false
+  HUST_77:
+    license: CC-BY-4.0
+    evidence: https://data.mendeley.com/datasets/nsc7hnsg4s/2
+    attribution: 'Yuan, Ma, and Xu, Mendeley Data, DOI 10.17632/nsc7hnsg4s.2'
+    training_allowed: true
+    raw_data_downloaded_cells: 0
+    training_eligible: false
+  RWTH_UR18650E:
+    license: CC-BY-4.0
+    evidence: https://publications.rwth-aachen.de/record/818642/
+    attribution: 'Sauer et al., RWTH Aachen, DOI 10.18154/RWTH-2021-04545'
+    training_allowed: true
+    raw_data_downloaded_cells: 0
+    training_eligible: false
+  OXFORD_DEGRADATION_1:
+    license: unverified
+    evidence: https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac
+    attribution: 'Oxford Research Archive, DOI 10.5287/bodleian:KO2kdmYGg'
+    training_allowed: false
+    raw_data_downloaded_cells: 0
+    training_eligible: false
+  ZENODO_LFP_STATIONARY_2026:
+    license: CC-BY-4.0
+    evidence: https://zenodo.org/records/22939281
+    attribution: 'Yagci et al., J. Energy Storage 124, 116774 (2025), and Zenodo DOI 10.5281/zenodo.22010995'
+    training_allowed: true
+    raw_data_downloaded_cells: 0
+    training_eligible: false
+  BAYREUTH_PATH_2025:
+    license: CC-BY-4.0
+    evidence: https://zenodo.org/records/15755725
+    attribution: 'Röder et al., Zenodo, DOI 10.5281/zenodo.15755725'
+    training_allowed: true
+    raw_data_downloaded_cells: 0
+    training_eligible: false
+  NASA_RANDOM_USAGE:
+    license: unverified
+    evidence: https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/
+    attribution: 'Bole, Kulkarni, and Daigle, NASA PCoE Randomized Battery Usage Data Set'
+    training_allowed: false
+    raw_data_downloaded_cells: 0
+    training_eligible: false

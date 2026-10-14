@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "verified_at": "2026-09-30",
+  "policy": "Intrinsic specifications define physical families; dataset/batch and operation cutoff define provenance/conditions, never chemistry. Unknown fields are not wildcards for external matching.",
+  "external_required_fields": ["chemistry", "manufacturer", "model", "form_factor", "nominal_capacity_ah", "nominal_voltage_v", "rated_voltage_min_v", "rated_voltage_max_v"],
+  "families": {
+    "A123_APR18650M1A_LFP_1p1Ah": {
+      "datasets": ["MIT"],
+      "status": "model_and_specifications_documented",
+      "specifications": {
+        "chemistry": "LFP/graphite", "manufacturer": "A123", "model": "APR18650M1A",
+        "form_factor": "18650", "nominal_capacity_ah": 1.1, "nominal_voltage_v": 3.3,
+        "rated_voltage_min_v": 2.0, "rated_voltage_max_v": 3.6
+      },
+      "conditions": {"ambient_temperature_c": 30.0, "diagnostic_discharge_rate_c": 4.0, "charging": "cell-specific single/two-step fast charging"},
+      "sources": [
+        {"url": "https://escholarship.org/uc/item/9532z8t0", "kind": "author manuscript in institutional repository", "supports": "LFP/graphite, A123 APR18650M1A, 1.1 Ah, 3.3 V, 30 C; indexed Methods text verified, direct page currently challenged"},
+        {"url": "https://web.mit.edu/braatzgroup/Attia_Nature_2020.pdf", "kind": "same authors' primary follow-up experimental Methods", "supports": "same model rated 2.0-3.6 V; not used to copy its different current termination or charging protocol"},
+        {"url": "https://github.com/rdbraatz/data-driven-prediction-of-battery-cycle-life-before-capacity-degradation", "kind": "original authors' source repository", "supports": "original MAT data structure and dataset provenance"}
+      ],
+      "limitations": ["Do not replace the local 134-cell audited cohort with the manuscript's 124-cell analysis subset without recording a scientific reason."]
+    },
+    "LISHEN_18650_NCM532_2Ah_XJTU_cohort": {
+      "datasets": ["XJTU"],
+      "status": "specification_documented_model_identifier_missing",
+      "specifications": {
+        "chemistry": "NCM532", "manufacturer": "LISHEN", "model": null,
+        "form_factor": "18650", "nominal_capacity_ah": 2.0, "nominal_voltage_v": 3.6,
+        "rated_voltage_min_v": 2.5, "rated_voltage_max_v": 4.2
+      },
+      "conditions": {"ambient_temperature_c": null, "ambient_temperature_description": "room temperature; not converted to an invented 25 C", "charging_discharging": "six recorded protocols; diagnostic current is 1C or 0.5C according to source metadata"},
+      "sources": [
+        {"url": "https://zenodo.org/records/10963339", "kind": "original author's dataset release", "supports": "manufacturer, 18650, NCM532 composition, 2000 mAh, 3.6 V, 2.5-4.2 V, room temperature, 55 cells"}
+      ],
+      "limitations": ["The experimental cohort is a registered family, not proof that every other LISHEN 2 Ah NCM532 cell is the identical model. External automatic same-model matching is unavailable until a model identifier is verified."]
+    },
+    "UNVERIFIED_18650_2Ah_NASA_aging_cohort": {
+      "datasets": ["NASA"],
+      "status": "isolated_unverified_chemistry_and_model",
+      "specifications": {
+        "chemistry": null, "manufacturer": null, "model": null,
+        "form_factor": "18650", "nominal_capacity_ah": 2.0, "nominal_voltage_v": null,
+        "rated_voltage_min_v": 2.7, "rated_voltage_max_v": null
+      },
+      "conditions": {"ambient_temperature_c": null, "note": "Read actual ambient_temperature from the raw experiment. Deep-discharge cutoffs 2.2/2.5/2.7 V are conditions, not manufacturer specification or chemistry."},
+      "sources": [
+        {"url": "https://data.nasa.gov/dataset/li-ion-battery-aging-datasets", "kind": "NASA official dataset description", "supports": "commercial 18650, rated 2 Ah, OEM discharge recommendation 2.7 V, experiment varies cutoff and temperature; no verified chemistry/model given"}
+      ],
+      "limitations": ["Four known source cells may be compared as an isolated exploratory cohort; chemistry/model equivalence between these four is not independently established. Do not merge with MIT or XJTU, or automatically route a new anonymous 2 Ah cell into this group."]
+    }
+  }
+}

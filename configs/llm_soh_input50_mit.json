@@ -1,0 +1,17 @@
+{
+  "frozen_plan": "experiments/soh_research_v5/audits/20260930T074750_792569Z",
+  "checkpoint": "models/llm/llama-3.2-1b-instruct",
+  "fold": "MIT_fold1", "seed": 20260930, "origin": 50,
+  "max_epochs": 60, "validation_every": 2, "patience": 8,
+  "batch_contexts": 4, "future_targets": 96,
+  "learning_rate": 0.0005, "weight_decay": 0.03,
+  "dropout": 0.1, "balance_coefficient": 0.01,
+  "candidates": [{"name": "llm_integrated_start_aux_input50", "pooling": "mean", "output_head": "integrated_rate", "normalize_router": false, "stage_weight": 0.5, "tail_weight": 0.5, "start_weight": 1.0}],
+  "hypothesis": "Small input-budget diagnostic, not formal optimal-N selection: retain the existing pretrained LLM integrated mean-pooling start-supervised configuration and frozen physical-cell split, change only permitted source-cycle budget from 100 to 50. Existing 100-slot storage is padding capacity, with actual observation/patch masking. Fit preprocessing on TRAIN with N=50 only; no observations after 50 or heldout SOH enter inference. Compare validation common cells and common source-cycle>100 interval as well as each budget's full coverage before interpreting gains.",
+  "control_run": "experiments/llm_soh_mvp/20261008T133739_668360Z",
+  "selection": "validation-only joint fraction then MAE+tail+stage; no refit; heldout not used for N choice",
+  "input_selection_rule": {"requires_curve_targets": true, "mape_increase_pp": 0.25, "tail_mae_increase_pp": 0.5, "stage_error_increase_pp": 0.5, "shape_failure_increase": 0, "prefer_shortest_qualifying": true},
+  "label_reference": "historical initial comparable capacity, unchanged",
+  "evidence": "single-seed input-budget development diagnostic; no optimal-N or independent-test claim",
+  "shape_rules": {"boundary_window_cycles": 5, "window_min_cycles": 20, "window_span_fraction": 0.1, "acceleration_change_soh": 0.01}
+}

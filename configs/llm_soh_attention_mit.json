@@ -1,0 +1,18 @@
+{
+  "frozen_plan": "experiments/soh_research_v5/audits/20260930T074750_792569Z",
+  "checkpoint": "models/llm/llama-3.2-1b-instruct",
+  "fold": "MIT_fold1", "seed": 20260930, "origin": 100,
+  "max_epochs": 60, "validation_every": 2, "patience": 8,
+  "batch_contexts": 4, "future_targets": 96,
+  "learning_rate": 0.0005, "weight_decay": 0.03,
+  "dropout": 0.1, "balance_coefficient": 0.01,
+  "candidates": [
+    {"name": "llm_attention_integrated_curve", "pooling": "attention", "output_head": "integrated_rate", "normalize_router": false, "stage_weight": 0.5, "tail_weight": 0.5}
+  ],
+  "hypothesis": "Change only masked history pooling from mean to trainable attention over actual pretrained LLM states, initialized to exact mean weights. Test if early historical changes are preserved and validation stage/tail/start errors improve. No independent model or bypass.",
+  "control_run": "experiments/llm_soh_mvp/20261008T132015_572426Z",
+  "selection": "validation-only joint fraction then mean MAE+tail MAE+stage drop; no refit; do not adopt by heldout results",
+  "label_reference": "historical initial comparable capacity, unchanged from control",
+  "evidence": "single-seed development architecture experiment, not independent confirmation",
+  "shape_rules": {"boundary_window_cycles": 5, "window_min_cycles": 20, "window_span_fraction": 0.1, "acceleration_change_soh": 0.01}
+}

@@ -1,0 +1,67 @@
+# Local Python/editor environments
+.venv/
+.idea/
+.vscode/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Credentials and machine-local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+*.local.json
+
+# Dataset caches, experiments, model weights and generated deliveries
+/data/
+/dataset/
+/experiments/
+/results/
+/outputs/
+/result_long_term_forecast.txt
+/test_results/
+/checkpoints/
+/tmp/
+/deliveries/
+/battery_data*/
+/battery_models*/
+/battery_final_models/
+/battery_*results*/
+/models/llm/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.joblib
+*.pkl
+*.pickle
+*.npz
+*.npy
+*.mat
+*.h5
+*.hdf5
+*.parquet
+*.bin
+*.log
+
+# Personal documents, raw spreadsheets, archives and executables
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pdf
+*.zip
+*.7z
+*.rar
+*.exe
+*.dll
+*.so
+~$*
+
+# Generated device release packages; common source remains available
+/deployment/stm32_*/

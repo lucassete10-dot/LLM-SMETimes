@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "scope": "same physical-family unseen-cell future SOH; no current-SOH or independent RUL",
+  "registry": "configs/battery_physical_registry.json",
+  "prepared_data_pointer": "data/interim/same_type_forecast/latest.json",
+  "integrity_audit": "data/interim/same_type_forecast/mit_discharge_integrity_20260929T060206_688121Z.json",
+  "target": "comparable discharge capacity / initial comparable reference capacity, SOH 0-1",
+  "origins_source_cycles": [20, 50, 100],
+  "evaluation_horizons": [10, 50, 100, "all_observed_future"],
+  "main_input": "V/I/T early signal prefixes, known specifications/conditions, source cycle and requested future horizon; no measured capacity, SOH, actual EOL or future signal",
+  "outer_folds": 5,
+  "split_seed": 20260930,
+  "training_seeds": [20260930, 20260931, 20260932, 20260933, 20260934],
+  "validation_fraction_of_development": 0.2,
+  "split_strata": "known charging/discharging conditions plus batch as provenance-balancing stratum, never final life or labels",
+  "physical_routing": "separate family-specific predictors; optional shared encoder later must retain compatible family-specific heads",
+  "nasa": "4-cell LOBO supplementary only; isolated unverified physical cohort",
+  "initial_candidates": {
+    "ridge": [{"alpha": 0.1}, {"alpha": 10.0}, {"alpha": 100.0}],
+    "extra_trees": [{"min_samples_leaf": 2}, {"min_samples_leaf": 4}, {"min_samples_leaf": 16}]
+  },
+  "full_models_pending": ["cycle_conditions_only", "physical_family_mean", "ElasticNet", "GPR", "XGBoost_or_LightGBM", "GRU", "LSTM", "TCN", "small_Transformer", "actual_pretrained_SMETimes_regression"],
+  "ablations_pending": ["random_backbone_matching_freeze_and_text_branch", "statistics_MLP_no_LLM", "no_statistics_prompt", "experts_1_4_8_and_parameter_matched_plain_head", "no_type_condition_input_but_keep_physical_gate"],
+  "smoke": {"folds": ["MIT_fold1", "XJTU_fold1"], "training_seed": 20260930, "purpose": "engineering sanity, not a five-fold five-seed accuracy claim"},
+  "existing_public_data_status": "previously inspected development data, not independent blind testing"
+}

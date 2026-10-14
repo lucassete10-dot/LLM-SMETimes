@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "objective_file": "C:/Users/Lenovo/.codex/attachments/5d222b6f-ec84-435d-a8d9-49c3fa3e9a4f/goal-objective.md",
+  "frozen_plan": "experiments/soh_research_v5/audits/20260930T074750_792569Z",
+  "checkpoint": "models/llm/llama-3.2-1b-instruct",
+  "fold": "MIT_fold1",
+  "origin": 100,
+  "seed": 20260930,
+  "history_slots": 100,
+  "future_targets": 96,
+  "batch_contexts": 4,
+  "tiny_cells": 12,
+  "max_tiny_epochs": 300,
+  "validation_every": 10,
+  "learning_rate": 0.0005,
+  "tiny_dropout": 0.0,
+  "tiny_weight_decay": 0.0,
+  "tiny_balance_coefficient": 0.0,
+  "rate_knots_horizon_100cycles": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    6.0,
+    8.0,
+    12.0,
+    16.0,
+    24.0,
+    32.0
+  ],
+  "rate_width": 128,
+  "recovery_max_soh": 0.005,
+  "tiny_gates_pp": {
+    "mae_pp": 0.2,
+    "tail_mae_pp": 0.5,
+    "stage_drop_max_pp": 0.5
+  },
+  "final_thresholds": {
+    "mape_percent": 1.0,
+    "mae_pp": 1.0,
+    "tail_mae_pp": 1.5,
+    "start_error_pp": 1.0,
+    "endpoint_error_pp": 2.0,
+    "stage_drop_max_pp": 2.0,
+    "relative_fade_mae": 0.25
+  },
+  "official_input": "visible V/I/T/time/known operating conditions only; no target Q/SOH/EOL; every forecasting branch traverses the pretrained LLM and SMETimes fusion/experts",
+  "selection": "TRAIN-only tiny selection and diagnosis; validation-only later candidate selection; viewed MIT/XJTU are development data",
+  "required_datasets": [
+    "MIT",
+    "XJTU",
+    "HUST",
+    "UConn_ISU_ILCC",
+    "Zhu2022_NCA"
+  ],
+  "learning_rate_schedule": "cosine",
+  "variant": "P1 single-factor cosine schedule; same 14 rate knots and same TRAIN cells"
+}

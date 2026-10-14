@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "frozen_plan": "experiments/soh_research_v5/audits/20260930T074750_792569Z",
+  "input_budget": "same source-cycle origins and same audited early V/I/T features as initial Ridge/ExtraTrees; capacity and EOL remain targets only",
+  "selection": "three preset candidate settings per tunable model, selected solely by validation cell-macro full-future MAPE at source origin100",
+  "models": {
+    "physical_family_mean": [{}],
+    "cycle_conditions_only": [{"alpha": 0.1}, {"alpha": 10.0}, {"alpha": 100.0}],
+    "elastic_net": [
+      {"alpha": 0.0003, "l1_ratio": 0.1},
+      {"alpha": 0.003, "l1_ratio": 0.5},
+      {"alpha": 0.03, "l1_ratio": 0.9}
+    ],
+    "gpr": [
+      {"initial_length_factor": 0.5, "initial_noise": 0.01, "max_training_pairs": 768},
+      {"initial_length_factor": 1.0, "initial_noise": 0.03, "max_training_pairs": 768},
+      {"initial_length_factor": 2.0, "initial_noise": 0.1, "max_training_pairs": 768}
+    ],
+    "lightgbm": [
+      {"num_leaves": 7, "learning_rate": 0.03, "reg_lambda": 0.1},
+      {"num_leaves": 15, "learning_rate": 0.05, "reg_lambda": 1.0},
+      {"num_leaves": 31, "learning_rate": 0.1, "reg_lambda": 10.0}
+    ]
+  },
+  "gpr_notes": "All training cells contribute a cell-balanced coreset. Median imputation and weighted scaling use all listed training pairs. GP kernel parameters optimize training marginal likelihood only, capped at30 iterations. Coreset size and reduced pair coverage are reported, not hidden. No unseen/test features enter coreset or preprocessing.",
+  "deterministic_models": ["physical_family_mean", "cycle_conditions_only", "elastic_net", "gpr"],
+  "deterministic_note": "Five training-seed repetitions are retained for matching the experiment matrix, but zero repetition SD for deterministic solvers is not additional statistical replication.",
+  "feature_notes": "Existing partial-curve voltage/current/temperature and trend/integral features are reused. They do not provide full charge IC peaks or complete discharge DeltaQ(V), and will not be described as doing so. New feature arms require an explicit separate comparison."
+}

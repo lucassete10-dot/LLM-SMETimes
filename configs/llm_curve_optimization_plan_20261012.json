@@ -1,0 +1,72 @@
+{
+  "version": "20261012_three_seeds_mape3",
+  "goal_file": "docs/LLM_SMETimes_training_optimization_goal_20261012.md",
+  "reporting_config": "configs\\llm_curve_reporting_practical_v1.json",
+  "datasets": [
+    "MIT",
+    "XJTU",
+    "HUST",
+    "UConn_ISU_ILCC",
+    "Zhu2022_NCA"
+  ],
+  "baseline_runs": 51,
+  "maximum_extra_runs": 66,
+  "screen_candidates": [
+    {
+      "name": "bounded_local_05pp",
+      "override": {
+        "local_recovery_max_soh": 0.005
+      },
+      "hypothesis": "Reduce local correction overfitting; every correction still reads LLM history."
+    },
+    {
+      "name": "shared_local_query",
+      "override": {
+        "local_readout": "query"
+      },
+      "hypothesis": "Share the scalar readout across physical time nodes, improving smoothness and reducing vector output memorization."
+    },
+    {
+      "name": "numeric_lora4",
+      "override": {
+        "numeric_lora_rank": 4
+      },
+      "hypothesis": "Adapt final pretrained attention q/v on numeric history through rank-4 LoRA; text cards retain base backbone."
+    },
+    {
+      "name": "huber05pp",
+      "override": {
+        "point_huber_beta_pp": 0.5
+      },
+      "hypothesis": "Reduce pressure to fit small local noise while retaining robust large-error gradients."
+    }
+  ],
+  "screen_fold": "first frozen fold of each dataset",
+  "screen_seed": 20260930,
+  "confirmation_seeds": [
+    20260931,
+    20260932
+  ],
+  "selection": "validation only; equal cell weighting, no test candidate selection",
+  "score_weights": {
+    "mae_pp": 1.0,
+    "tail_mae_pp": 1.0,
+    "stage_drop_max_pp": 0.5
+  },
+  "screen_min_relative_improvement": 0.1,
+  "confirmation_min_mean_relative_improvement": 0.1,
+  "confirmation_min_improved_seed_count": 2,
+  "worst_val_mae_max_ratio": 1.1,
+  "numeric_thresholds": {
+    "mape_percent": 3.0,
+    "mae_pp": 2.0,
+    "tail_mae_pp": 3.0,
+    "start_error_pp": 2.0,
+    "endpoint_error_pp": 3.0,
+    "stage_drop_max_pp": 3.0
+  },
+  "full_replication": "Confirmed winner replicated on every original fold and all three seeds, reusing three confirmation fits.",
+  "no_winner": "Keep baseline; report negative result and continue later datasets. Do not endlessly search or alter raw labels.",
+  "strict_reference_only": true,
+  "independent_confirmation_claim": false
+}

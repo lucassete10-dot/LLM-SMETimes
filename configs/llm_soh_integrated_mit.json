@@ -1,0 +1,18 @@
+{
+  "frozen_plan": "experiments/soh_research_v5/audits/20260930T074750_792569Z",
+  "checkpoint": "models/llm/llama-3.2-1b-instruct",
+  "fold": "MIT_fold1", "seed": 20260930, "origin": 100,
+  "max_epochs": 60, "validation_every": 2, "patience": 8,
+  "batch_contexts": 4, "future_targets": 96,
+  "learning_rate": 0.0005, "weight_decay": 0.03,
+  "dropout": 0.1, "balance_coefficient": 0.01,
+  "candidates": [
+    {"name": "llm_integrated_rate_curve", "output_head": "integrated_rate", "normalize_router": false, "stage_weight": 0.5, "tail_weight": 0.5}
+  ],
+  "hypothesis": "Replace only the query head with LLM-conditioned start + analytic smooth degradation-rate integral and bounded 0.5pp recovery. Test whether whole trajectory errors improve; smoother appearance alone is not success. Restricts acceleration to smooth single knee: retain failures if this prior is unsuitable.",
+  "control_run": "experiments/llm_soh_mvp/20261008T125806_891108Z",
+  "selection": "validation-only joint fraction then mean MAE+tail MAE+stage drop; no refit; reject adoption if tail/stage worsens",
+  "label_reference": "historical initial comparable capacity, unchanged from control",
+  "evidence": "single-seed development architecture experiment, not independent confirmation",
+  "shape_rules": {"boundary_window_cycles": 5, "window_min_cycles": 20, "window_span_fraction": 0.1, "acceleration_change_soh": 0.01}
+}

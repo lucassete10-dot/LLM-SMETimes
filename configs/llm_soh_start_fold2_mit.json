@@ -1,0 +1,19 @@
+{
+  "frozen_plan": "experiments/soh_research_v5/audits/20260930T074750_792569Z",
+  "checkpoint": "models/llm/llama-3.2-1b-instruct",
+  "fold": "MIT_fold2", "seed": 20260930, "origin": 100,
+  "max_epochs": 60, "validation_every": 2, "patience": 8,
+  "batch_contexts": 4, "future_targets": 96,
+  "learning_rate": 0.0005, "weight_decay": 0.03,
+  "dropout": 0.1, "balance_coefficient": 0.01,
+  "candidates": [
+    {"name": "llm_integrated_control", "pooling": "mean", "output_head": "integrated_rate", "normalize_router": false, "stage_weight": 0.5, "tail_weight": 0.5},
+    {"name": "llm_integrated_start_aux", "pooling": "mean", "output_head": "integrated_rate", "normalize_router": false, "stage_weight": 0.5, "tail_weight": 0.5, "start_weight": 1.0}
+  ],
+  "hypothesis": "Predefined second MIT cell split: compare exact-origin TRAIN-only auxiliary supervision with same LLM integrated-head control. Fold1 selection validation improved start, stage and tail, but heldout tail worsened. Require cross-split stability before promotion; no new architecture or N search during this comparison.",
+  "prior_development_run": "experiments/llm_soh_mvp/20261008T133739_668360Z",
+  "selection": "validation-only joint fraction then mean MAE+tail MAE+stage drop; no refit; do not adopt by heldout results",
+  "label_reference": "historical initial comparable capacity, unchanged from control",
+  "evidence": "single-seed second development split, not independent confirmation",
+  "shape_rules": {"boundary_window_cycles": 5, "window_min_cycles": 20, "window_span_fraction": 0.1, "acceleration_change_soh": 0.01}
+}

@@ -1,0 +1,50 @@
+# Transcribed from Table 2 of the authors' dataset paper, Zenodo 7896429.
+# Only profiles represented by downloaded sample cells are listed here.
+schema_version: 1
+source: https://zenodo.org/records/7896429/files/Galijatovic_2023_Ageing%20Data%20of%20Lithium-ion%20Panasonic%20NCR18650B%20Battery%20Cells.pdf
+profiles:
+  C06:
+    aging_mode: near_calendar
+    chamber_temperature_c: 40
+    charge_c_rate: 0
+    mean_discharge_c_rate: 0
+    peak_discharge_c_rate: 0
+    discharge_frequency_hz: 0.0003
+    mean_soc_percent: 95
+    soc_swing_percent: 0.01
+  L206:
+    aging_mode: calendar
+    chamber_temperature_c: 45
+    charge_c_rate: 0
+    mean_discharge_c_rate: 0
+    peak_discharge_c_rate: 0
+    discharge_frequency_hz: 0
+    mean_soc_percent: 95
+    soc_swing_percent: 0
+  L220:
+    aging_mode: cyclic
+    chamber_temperature_c: 20
+    charge_c_rate: 0.5
+    mean_discharge_c_rate: 0.75
+    peak_discharge_c_rate: 1.5
+    discharge_frequency_hz: 0.25
+    mean_soc_percent: 85
+    soc_swing_percent: 2.5
+  L207:
+    aging_mode: cyclic
+    chamber_temperature_c: 20
+    charge_c_rate: 0.05
+    mean_discharge_c_rate: 0.9
+    peak_discharge_c_rate: 1.5
+    discharge_frequency_hz: 0.25
+    mean_soc_percent: 25
+    soc_swing_percent: 2.5
+  L214:
+    aging_mode: cyclic
+    chamber_temperature_c: 45
+    charge_c_rate: 0.05
+    mean_discharge_c_rate: 1.5
+    peak_discharge_c_rate: 1.5
+    discharge_frequency_hz: 0
+    mean_soc_percent: 70
+    soc_swing_percent: 50

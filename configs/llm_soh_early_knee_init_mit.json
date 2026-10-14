@@ -1,0 +1,18 @@
+{
+  "frozen_plan": "experiments/soh_research_v5/audits/20260930T074750_792569Z",
+  "checkpoint": "models/llm/llama-3.2-1b-instruct",
+  "fold": "MIT_fold1", "seed": 20260930, "origin": 100,
+  "max_epochs": 60, "validation_every": 2, "patience": 8,
+  "batch_contexts": 4, "future_targets": 96,
+  "learning_rate": 0.0005, "weight_decay": 0.03,
+  "dropout": 0.1, "balance_coefficient": 0.01,
+  "candidates": [
+    {"name": "llm_early_knee_init_start_aux", "pooling": "mean", "output_head": "integrated_rate", "normalize_router": false, "stage_weight": 0.5, "tail_weight": 0.5, "start_weight": 1.0, "initial_knee_bias": -1.0}
+  ],
+  "hypothesis": "TRAIN minibatch diagnostics show very small initial knee/acceleration gradients on some short future spans. Existing bias+1 places nominal onset around657 future cycles, outside many short curves. Change ONLY initial knee bias to-1 (nominal157 future cycles), leaving onset freely learnable and preserving all remaining initialization, architecture, inputs, losses and validation selection. No future endpoint or heldout label defines initialization.",
+  "control_run": "experiments/llm_soh_mvp/20261008T133739_668360Z",
+  "selection": "validation-only joint fraction then mean MAE+tail MAE+stage drop; no heldout selection",
+  "label_reference": "historical initial comparable capacity, unchanged from control",
+  "evidence": "single-seed development initialization conditioning experiment; not final improvement",
+  "shape_rules": {"boundary_window_cycles": 5, "window_min_cycles": 20, "window_span_fraction": 0.1, "acceleration_change_soh": 0.01}
+}

@@ -1,0 +1,21 @@
+{
+  "version": "practical_v3_mape3",
+  "effective_date": "2026-10-12",
+  "reason": "Latest goal attachment 8f0c7452 explicitly specifies primary MAPE<=3%; retain previously delivered MAPE5 reports and preregistered validation selection rules.",
+  "numeric_thresholds": {
+    "mape_percent": 3.0,
+    "mae_pp": 2.0,
+    "tail_mae_pp": 3.0,
+    "start_error_pp": 2.0,
+    "endpoint_error_pp": 3.0,
+    "stage_drop_max_pp": 3.0
+  },
+  "knee_and_relative_fade": "diagnostic reference; no automatic veto",
+  "shape_review": "Check overall decline and later acceleration; no need to reproduce isolated capacity spikes. Numeric pass alone is not visual approval.",
+  "raw_metrics_retained": true,
+  "strict_reference_retained": true,
+  "training_validation_test_separate": true,
+  "changed_reporting_criteria_not_model_predictions": true,
+  "primary_metric": "mape_percent",
+  "primary_target_percent": 3.0
+}

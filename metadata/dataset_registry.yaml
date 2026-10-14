@@ -1,0 +1,186 @@
+# Candidate registry. Null means not verified, not "not present".
+# Only access_status: ingested datasets may enter training.
+schema_version: 1
+reviewed_on: '2026-09-28'
+datasets:
+  - dataset_name: Panasonic NCR18650B aging (Galijatovic 2023)
+    dataset_id: PANASONIC_NCR18650B
+    official_url: https://zenodo.org/records/7896429
+    publication: 'Ageing Data of Lithium-ion "Panasonic NCR18650B" Battery Cells'
+    publication_year: 2023
+    download_url_or_access_method: https://zenodo.org/api/records/7896429
+    license: CC-BY-4.0
+    citation_requirement: Attribute dataset creators and DOI 10.5281/zenodo.7896429; cite linked research paper when using protocol details.
+    chemistry: NCA
+    form_factor: cylindrical 18650
+    nominal_capacity: 3.25 Ah
+    cell_count: 116
+    temperature_conditions: 0, 5, 20, 30, 40, and 45 degC aging profiles; RTP at 5, 15, 25, 35, 45 degC initially
+    charge_protocols: 37 aging profiles varying charge current and other conditions
+    discharge_protocols: varied average/peak current, frequency, and SOC swing
+    EOL_definition: source experiment stopped at 70% initial capacity or project end; our 80% crossing must be separately derived and interval-censored between RTPs
+    raw_V_available: true
+    raw_I_available: true
+    raw_T_available: true
+    capacity_available: true  # Reference tests described by source.
+    DCIR_available: null
+    EIS_available: null
+    estimated_size: 27.1 GB total; individual HDF5 files
+    access_status: sample_downloaded_test_level_qa_not_training_ingested
+    notes: 'Seven MD5-verified cells as of audit. Three L214 high-stress cyclic replicates (2_101/102/103) each have 22 RTP25 checks and an interval-observed 80% crossing; EFC brackets are 334.1-354.4, 310.7-332.5, and 310.2-332.1 respectively. These are not exact cycle endpoints. 2_108 stays above 80%; 2_119 has only one RTP25. 2_018/097 are calendar/near-calendar. No new cell enters training yet.'
+
+  - dataset_name: HUST 77 LFP/graphite cells
+    dataset_id: HUST_77
+    official_url: https://data.mendeley.com/datasets/nsc7hnsg4s/2
+    publication: Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning
+    publication_year: 2022
+    download_url_or_access_method: Mendeley Data public page, Download All; unauthenticated file API returned Unauthorized
+    license: CC-BY-4.0
+    citation_requirement: Cite dataset DOI 10.17632/nsc7hnsg4s.2 and associated article when used.
+    chemistry: LFP/graphite
+    form_factor: null
+    nominal_capacity: 1.1 Ah
+    cell_count: 77
+    temperature_conditions: 30 degC
+    charge_protocols: identical charge protocol across cells
+    discharge_protocols: different multi-stage discharge protocols
+    EOL_definition: null
+    raw_V_available: null
+    raw_I_available: null
+    raw_T_available: null
+    capacity_available: null
+    DCIR_available: null
+    EIS_available: null
+    estimated_size: null
+    access_status: manual_download_needed_not_ingested
+    notes: 'Correct dataset slug is nsc7hnsg4s (not nsc7hnsq4s). No access-control bypass attempted.'
+
+  - dataset_name: RWTH UR18650E 48-cell cyclic aging
+    dataset_id: RWTH_UR18650E
+    official_url: https://publications.rwth-aachen.de/record/818642/
+    publication: Time-series cyclic aging data on 48 commercial NMC/graphite Sanyo/Panasonic UR18650E cylindrical cells
+    publication_year: 2021
+    download_url_or_access_method: https://publications.rwth-aachen.de/record/818642/files/Rawdata.zip
+    license: CC-BY-4.0
+    citation_requirement: Cite dataset DOI 10.18154/RWTH-2021-04545 and associated article when used.
+    chemistry: NMC/graphite
+    form_factor: cylindrical 18650
+    nominal_capacity: null
+    cell_count: 48
+    temperature_conditions: same controlled conditions; numerical value pending verification
+    charge_protocols: same aging profile across cells
+    discharge_protocols: same aging profile across cells
+    EOL_definition: null
+    raw_V_available: true
+    raw_I_available: true
+    raw_T_available: true
+    capacity_available: true  # Source describes regular RPT performance tests.
+    DCIR_available: null
+    EIS_available: null
+    estimated_size: null
+    access_status: automated_download_challenged_not_ingested
+    notes: 'Official record and CC-BY-4.0 verified; raw ZIP request returned site anti-bot page. No bypass attempted.'
+
+  - dataset_name: Oxford Battery Degradation Dataset 1
+    dataset_id: OXFORD_DEGRADATION_1
+    official_url: https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac
+    publication: Oxford Battery Degradation Dataset 1
+    publication_year: 2017
+    download_url_or_access_method: Oxford Research Archive page; current automated access returned HTTP 403
+    license: null
+    citation_requirement: Cite dataset DOI 10.5287/bodleian:KO2kdmYGg; verify any further terms before use.
+    chemistry: null
+    form_factor: pouch
+    nominal_capacity: 0.74 Ah
+    cell_count: 8
+    temperature_conditions: null
+    charge_protocols: null
+    discharge_protocols: null
+    EOL_definition: null
+    raw_V_available: null
+    raw_I_available: null
+    raw_T_available: null
+    capacity_available: null
+    DCIR_available: null
+    EIS_available: null
+    estimated_size: approximately 254 MB MAT archive; pending direct confirmation
+    access_status: official_page_unavailable_not_ingested
+    notes: 'Candidate details are provisional because the official archive is currently inaccessible from this environment. Do not train or redistribute.'
+
+  - dataset_name: Large-format LFP calendar and cyclic aging (Yagci 2026 repository)
+    dataset_id: ZENODO_LFP_STATIONARY_2026
+    official_url: https://zenodo.org/records/22939281
+    publication: Degradation modes of large-format stationary-storage LFP-based lithium-ion cells during calendaric and cyclic aging
+    publication_year: 2025
+    download_url_or_access_method: https://zenodo.org/api/records/22939281
+    license: CC-BY-4.0
+    citation_requirement: 'Authors require both J. Energy Storage 124, 116774 (2025) and Zenodo DOI 10.5281/zenodo.22010995.'
+    chemistry: LFP
+    form_factor: large-format stationary cell
+    nominal_capacity: 180 Ah
+    cell_count: 12
+    temperature_conditions: 35 and 50 degC
+    charge_protocols: cyclic and calendar-aging protocols; details pending raw review
+    discharge_protocols: up to 1500 aging cycles; details pending raw review
+    EOL_definition: null
+    raw_V_available: true
+    raw_I_available: true
+    raw_T_available: null
+    capacity_available: true
+    DCIR_available: null
+    EIS_available: null
+    estimated_size: 2.5 GB archive
+    access_status: candidate_not_downloaded
+    notes: 'Zenodo record says 12 cells, checkup raw MAT/TXT and cyclic-aging MAT; useful calendar/temperature domain, not yet ingested.'
+
+  - dataset_name: Bayreuth degradation path indicators
+    dataset_id: BAYREUTH_PATH_2025
+    official_url: https://zenodo.org/records/15755725
+    publication: Degradation path indicators for lithium-ion batteries
+    publication_year: 2025
+    download_url_or_access_method: https://zenodo.org/api/records/15755725
+    license: CC-BY-4.0
+    citation_requirement: Attribute Röder et al. and cite dataset DOI 10.5281/zenodo.15755725.
+    chemistry: null
+    form_factor: null
+    nominal_capacity: null
+    cell_count: 48
+    temperature_conditions: varied; details in accompanying metrics workbook, not yet verified
+    charge_protocols: 70-cycle 0-100% SOC aging under varied C-rate
+    discharge_protocols: 70-cycle 0-100% SOC aging under varied C-rate
+    EOL_definition: BOL and post-aging EOL checkups, not necessarily 80% SOH
+    raw_V_available: null
+    raw_I_available: null
+    raw_T_available: null
+    capacity_available: true
+    DCIR_available: null  # Pulses exist, but DCIR extraction has not been verified.
+    EIS_available: true
+    estimated_size: 918.3 MB in 48 cell ZIPs plus 17 kB metrics workbook
+    access_status: candidate_not_downloaded
+    notes: 'High-value EIS/pulse/OCV health indicators but only 70 aging cycles; not a full-life RUL benchmark without observed 80% endpoint.'
+
+  - dataset_name: NASA randomized battery usage
+    dataset_id: NASA_RANDOM_USAGE
+    official_url: https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/
+    publication: Randomized Battery Usage Data Set
+    publication_year: null
+    download_url_or_access_method: https://phm-datasets.s3.amazonaws.com/NASA/11.+Randomized+Battery+Usage+Data+Set.zip
+    license: null
+    citation_requirement: Cite Bole, Kulkarni, and Daigle as directed by the NASA PCoE repository.
+    chemistry: null
+    form_factor: null
+    nominal_capacity: null
+    cell_count: null
+    temperature_conditions: room-temperature and 40 degC random-walk variants listed by NASA
+    charge_protocols: randomized usage; raw protocol needs review
+    discharge_protocols: random-walk variants; raw protocol needs review
+    EOL_definition: null
+    raw_V_available: null
+    raw_I_available: null
+    raw_T_available: null
+    capacity_available: null
+    DCIR_available: null
+    EIS_available: null
+    estimated_size: null
+    access_status: rights_and_schema_review_needed_not_downloaded
+    notes: 'Different NASA PCoE collection from the four B0005/B0006/B0007/B0018 cells; do not treat it as a mirror or training-ready until source files and terms are audited.'

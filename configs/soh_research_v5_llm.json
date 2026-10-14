@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "kind": "frozen_llm",
+  "frozen_plan": "experiments/soh_research_v5/audits/20260930T074750_792569Z",
+  "checkpoint": "models/llm/llama-3.2-1b-instruct",
+  "architectures": ["llm_e1", "llm_e2", "llm_e4", "llm_experts1", "llm_experts8", "llm_matched_plain"],
+  "variants": {
+    "llm_e1": {"pretrained": true, "use_statistics": true, "experts": 4, "rank": 64},
+    "llm_e2": {"pretrained": false, "use_statistics": true, "experts": 4, "rank": 64},
+    "llm_e4": {"pretrained": true, "use_statistics": false, "experts": 4, "rank": 64},
+    "llm_experts1": {"pretrained": true, "use_statistics": true, "experts": 1, "rank": 64},
+    "llm_experts8": {"pretrained": true, "use_statistics": true, "experts": 8, "rank": 64},
+    "llm_matched_plain": {"pretrained": true, "use_statistics": true, "experts": 1, "rank": 256}
+  },
+  "candidates": [
+    {"dropout": 0.1, "learning_rate": 0.001, "weight_decay": 0.01},
+    {"dropout": 0.1, "learning_rate": 0.0005, "weight_decay": 0.03},
+    {"dropout": 0.2, "learning_rate": 0.003, "weight_decay": 0.03}
+  ],
+  "max_epochs": 60,
+  "validation_every_epochs": 2,
+  "patience_validations": 6,
+  "batch_contexts": 4,
+  "max_future_targets_per_context": 96,
+  "patch_size": 5,
+  "max_text_tokens": 128,
+  "balance_coefficient": 0.01,
+  "smoke_epochs": 2,
+  "selection_metric": "validation cell-macro all-observed-future MAPE at source origin100",
+  "random_control": "E2 randomizes ALL language-backbone weights including the text branch; identical adapter/head initialization for matching variants",
+  "matched_plain_control": "one rank256 expert versus four rank64 experts matches expert matrix parameter budget, except small gate-parameter difference reported explicitly",
+  "E3": "statistics_mlp in the dedicated-sequence experiment using the same frozen folds and input budget",
+  "E6": "not applicable in the initial within-family models: type selects a physically isolated model, not a trainable type feature. Do not remove the physical gate or call removal of operating conditions removal of battery type.",
+  "caveat": "SMETimes-style battery deterministic regression adaptation; dense low-rank experts, not exact original reconstruction decoder or sparse expert compute. Total 1B-class frozen parameters and trainable adapter parameters both reported. Three candidate budgets match small baselines; batch size and runtime differ and are recorded. No measured capacity/SOH or future signals in inputs."
+}

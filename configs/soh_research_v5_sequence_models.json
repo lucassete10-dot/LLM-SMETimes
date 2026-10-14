@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "frozen_plan": "experiments/soh_research_v5/audits/20260930T074750_792569Z",
+  "architectures": ["gru", "lstm", "tcn", "transformer", "statistics_mlp"],
+  "candidates": [
+    {"hidden": 64, "dropout": 0.1, "learning_rate": 0.001, "weight_decay": 0.01},
+    {"hidden": 96, "dropout": 0.1, "learning_rate": 0.0005, "weight_decay": 0.03},
+    {"hidden": 128, "dropout": 0.2, "learning_rate": 0.003, "weight_decay": 0.03}
+  ],
+  "max_epochs": 60,
+  "validation_every_epochs": 2,
+  "patience_validations": 6,
+  "batch_contexts": 16,
+  "max_future_targets_per_context": 96,
+  "selection_metric": "validation cell-macro all-observed-future MAPE at source origin100",
+  "loss": "MSE averaged within future targets and origins, with equal weight per battery",
+  "preprocessing": "training-only raw-history and statistical-prefix imputation/weighted scaling; padded history with explicit true length and signal-availability mask",
+  "representation": "GRU/LSTM/TCN/smallTransformer encode observed early cycle signal features; statistics_MLP encodes the same audited summary features used by tabular baselines. All receive the same observation budget and horizon/known-condition information, not measured capacity/SOH/EOL.",
+  "experts_or_llm": "These are small dedicated sequence/statistical baselines, not pretrained SMETimes. Genuine LLM and text/random-backbone/expert ablations remain a separate forthcoming implementation.",
+  "smoke_epochs": 2
+}

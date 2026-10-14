@@ -1,0 +1,19 @@
+{
+  "cell_id": "replace_with_actual_cell_serial",
+  "specifications": {
+    "chemistry": "LFP/graphite",
+    "manufacturer": "A123",
+    "model": "APR18650M1A",
+    "form_factor": "18650",
+    "nominal_capacity_ah": 1.1,
+    "nominal_voltage_v": 3.3,
+    "rated_voltage_min_v": 2.0,
+    "rated_voltage_max_v": 3.6
+  },
+  "operating_conditions": {
+    "charge_rate_steps_c": [5.4, 3.0],
+    "charge_switch_soc": 0.5,
+    "diagnostic_discharge_rate_c": 4.0,
+    "ambient_temperature_c": 30.0
+  }
+}
