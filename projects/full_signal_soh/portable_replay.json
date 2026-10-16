@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "datasets": 5,
+  "max_allowed_error_soh": 1e-05,
+  "fresh_CLI_inference": true
+}

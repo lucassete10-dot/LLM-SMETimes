@@ -1,0 +1,164 @@
+{
+  "task": "full-signal SOH estimation",
+  "seed": 20260930,
+  "train_cells": 240,
+  "validation_cells": 5,
+  "no_claim_of_forecasting": true,
+  "results": [
+    {
+      "dataset": "MIT",
+      "train_cells": 83,
+      "train_mape_percent": 0.32890651163075046,
+      "train_mae_pp": 0.30822952348626304,
+      "validation_cell": "b1c13",
+      "validation_full_signal": {
+        "numeric_evaluable": true,
+        "mape_percent": 0.6127685867165915,
+        "mae_pp": 0.5741820194835624,
+        "tail_mae_pp": 1.6305145994369392,
+        "start_error_pp": 0.043746371149100405,
+        "endpoint_error_pp": 1.1422470174499266,
+        "stage_drop_max_pp": 0.8114815101632256,
+        "stage_metrics_available": true,
+        "late_mape_percent": 1.7946187793916775
+      },
+      "validation_untrained_prefix_extrapolation": {
+        "numeric_evaluable": true,
+        "mape_percent": 2.837971563060064,
+        "mae_pp": 2.628747281199676,
+        "tail_mae_pp": 8.308846205418885,
+        "start_error_pp": 0.05370722305866327,
+        "endpoint_error_pp": 13.892887536459375,
+        "stage_drop_max_pp": 11.162793601988874,
+        "stage_metrics_available": true,
+        "late_mape_percent": 9.22233595158907
+      },
+      "prefix_observations": 99,
+      "model_sha256": "dc79be2c3e8ea574dbd6259ae308852a0e35e1cc28e77373e80798743e66ef07"
+    },
+    {
+      "dataset": "XJTU",
+      "train_cells": 31,
+      "train_mape_percent": 0.6844303272219845,
+      "train_mae_pp": 0.6528604586110774,
+      "validation_cell": "b1_2C_battery-1",
+      "validation_full_signal": {
+        "numeric_evaluable": true,
+        "mape_percent": 0.7889691744111759,
+        "mae_pp": 0.763886317042648,
+        "tail_mae_pp": 1.0861413103022066,
+        "start_error_pp": 0.6903978580873771,
+        "endpoint_error_pp": 3.842453235143206,
+        "stage_drop_max_pp": 1.6706225998851743,
+        "stage_metrics_available": true,
+        "late_mape_percent": 1.2187549032473153
+      },
+      "validation_untrained_prefix_extrapolation": {
+        "numeric_evaluable": true,
+        "mape_percent": 5.346292497602283,
+        "mae_pp": 4.998624656900056,
+        "tail_mae_pp": 12.897620748416244,
+        "start_error_pp": 2.6927562946718497,
+        "endpoint_error_pp": 17.903514629847027,
+        "stage_drop_max_pp": 9.518161641791156,
+        "stage_metrics_available": true,
+        "late_mape_percent": 14.41807614511838
+      },
+      "prefix_observations": 99,
+      "model_sha256": "6dbb1fd7736cf348f7eb400dddd78ccb2d7f5a19e535e09d56a474b7e1ce01a9"
+    },
+    {
+      "dataset": "HUST",
+      "train_cells": 45,
+      "train_mape_percent": 0.2626685074551945,
+      "train_mae_pp": 0.23409502165930454,
+      "validation_cell": "HUST_1-1",
+      "validation_full_signal": {
+        "numeric_evaluable": true,
+        "mape_percent": 1.2666030003125544,
+        "mae_pp": 1.0822455025254212,
+        "tail_mae_pp": 2.2908199056113894,
+        "start_error_pp": 0.24661384930999564,
+        "endpoint_error_pp": 1.7971992876992138,
+        "stage_drop_max_pp": 1.1065631064340886,
+        "stage_metrics_available": true,
+        "late_mape_percent": 2.8683813052376466
+      },
+      "validation_untrained_prefix_extrapolation": {
+        "numeric_evaluable": true,
+        "mape_percent": 13.011502214284084,
+        "mae_pp": 11.18352319730776,
+        "tail_mae_pp": 22.780288350759182,
+        "start_error_pp": 0.22000037541778372,
+        "endpoint_error_pp": 26.892781219197758,
+        "stage_drop_max_pp": 12.846258715731551,
+        "stage_metrics_available": true,
+        "late_mape_percent": 28.720433187078324
+      },
+      "prefix_observations": 100,
+      "model_sha256": "1d43a967c2b78b962c19de6fa5f0644f22940a36c83f1461758d323e07fccd3f"
+    },
+    {
+      "dataset": "UConn_ISU_ILCC",
+      "train_cells": 42,
+      "train_mape_percent": 0.279244865488657,
+      "train_mae_pp": 0.25463786149080575,
+      "validation_cell": "UConn_LFP_003",
+      "validation_full_signal": {
+        "numeric_evaluable": true,
+        "mape_percent": 1.1744047813301124,
+        "mae_pp": 1.0280741659560202,
+        "tail_mae_pp": 1.7478928908165998,
+        "start_error_pp": 0.1423783788335964,
+        "endpoint_error_pp": 1.1097059057272873,
+        "stage_drop_max_pp": 1.439269109637309,
+        "stage_metrics_available": true,
+        "late_mape_percent": 2.1198106293237586
+      },
+      "validation_untrained_prefix_extrapolation": {
+        "numeric_evaluable": true,
+        "mape_percent": 3.957779077400716,
+        "mae_pp": 3.4436383884776998,
+        "tail_mae_pp": 6.757664373783881,
+        "start_error_pp": 0.3734104147302464,
+        "endpoint_error_pp": 5.717195530124764,
+        "stage_drop_max_pp": 3.3628744641236774,
+        "stage_metrics_available": true,
+        "late_mape_percent": 8.2016914023489
+      },
+      "prefix_observations": 1,
+      "model_sha256": "77c8b470af6b538d9f3943d2807aa0c56123262b766f714049f2c7bd856f9c72"
+    },
+    {
+      "dataset": "Zhu2022_NCA",
+      "train_cells": 39,
+      "train_mape_percent": 0.5647751105302102,
+      "train_mae_pp": 0.4754494776642461,
+      "validation_cell": "CY45-05_1-#3",
+      "validation_full_signal": {
+        "numeric_evaluable": true,
+        "mape_percent": 0.6405402373825054,
+        "mae_pp": 0.5864476495052817,
+        "tail_mae_pp": 0.1765119465872297,
+        "start_error_pp": 0.38040225283538787,
+        "endpoint_error_pp": 0.17126362948957086,
+        "stage_drop_max_pp": 0.6081251977069657,
+        "stage_metrics_available": true,
+        "late_mape_percent": 0.19551945503725157
+      },
+      "validation_untrained_prefix_extrapolation": {
+        "numeric_evaluable": true,
+        "mape_percent": 1.336207720395649,
+        "mae_pp": 1.2140180353067636,
+        "tail_mae_pp": 2.244979360575331,
+        "start_error_pp": 0.4648512147244266,
+        "endpoint_error_pp": 2.4587528052860796,
+        "stage_drop_max_pp": 1.0247957220920756,
+        "stage_metrics_available": true,
+        "late_mape_percent": 2.4888069584991275
+      },
+      "prefix_observations": 97,
+      "model_sha256": "b2a220c2c82a3a9f2094a5d67969f97a0dfb2e8786c581bb89311e9ee3f20743"
+    }
+  ]
+}

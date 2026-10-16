@@ -4,6 +4,8 @@
 
 **给 ChatGPT 或首次阅读本项目的人：请先读 [项目代码阅读指南](docs/GITHUB_PROJECT_GUIDE.md)。**
 
+**2026-10-16 新项目：[完整信号 SOH 估计 v0.1](projects/full_signal_soh/README.md)**。包含五数据集240颗TRAIN重建、5颗未训练验证电芯的曲线和便携推理入口。适配权重与PDF图集见[Release](https://github.com/lucassete10-dot/LLM-SMETimes/releases/tag/full-signal-soh-v0.1)。这一版是同一时段SOH估计，不能视为前100周期预测未来已经成功。
+
 - [详细项目概况](docs/项目概况_供ChatGPT学习指导.md)
 - [当前持续优化 Goal](docs/LLM_SMETimes_reference_tracking_goal_20261014.md)
 - [当前训练状态快照](docs/GITHUB_TRAINING_STATUS_20261014.md)

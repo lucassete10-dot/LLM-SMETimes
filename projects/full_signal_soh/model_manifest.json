@@ -1,0 +1,58 @@
+{
+  "format_version": 1,
+  "files": [
+    {
+      "path": "estimators/MIT/model.pt",
+      "sha256": "dc79be2c3e8ea574dbd6259ae308852a0e35e1cc28e77373e80798743e66ef07",
+      "bytes": 10795989
+    },
+    {
+      "path": "estimators/MIT/estimator.json",
+      "sha256": "0de76a1f973c47f6ce4cc5ead4a9c645f975cc3e3585c9176fc96abaf82f5cad",
+      "bytes": 5269
+    },
+    {
+      "path": "estimators/XJTU/model.pt",
+      "sha256": "6dbb1fd7736cf348f7eb400dddd78ccb2d7f5a19e535e09d56a474b7e1ce01a9",
+      "bytes": 10386389
+    },
+    {
+      "path": "estimators/XJTU/estimator.json",
+      "sha256": "941913fd6161d33ede90bb16ed8d8dbbda90db084b0ca131fa3e4789cee02fe6",
+      "bytes": 4729
+    },
+    {
+      "path": "estimators/HUST/model.pt",
+      "sha256": "1d43a967c2b78b962c19de6fa5f0644f22940a36c83f1461758d323e07fccd3f",
+      "bytes": 9239509
+    },
+    {
+      "path": "estimators/HUST/estimator.json",
+      "sha256": "93142944547840ca97528d5a820001f7ff05473ce526bb52b2006125097f171a",
+      "bytes": 4181
+    },
+    {
+      "path": "estimators/UConn_ISU_ILCC/model.pt",
+      "sha256": "77c8b470af6b538d9f3943d2807aa0c56123262b766f714049f2c7bd856f9c72",
+      "bytes": 56261589
+    },
+    {
+      "path": "estimators/UConn_ISU_ILCC/estimator.json",
+      "sha256": "20a35fe6c7f7f5a7598dff647bea7bba1774991d27a1b2b83966bdff53e19b9b",
+      "bytes": 60875
+    },
+    {
+      "path": "estimators/Zhu2022_NCA/model.pt",
+      "sha256": "b2a220c2c82a3a9f2094a5d67969f97a0dfb2e8786c581bb89311e9ee3f20743",
+      "bytes": 9239509
+    },
+    {
+      "path": "estimators/Zhu2022_NCA/estimator.json",
+      "sha256": "e2a21b9dd38e60b41349f29c366a407af5928b571a9c09c4e53c7d76b9e207df",
+      "bytes": 4276
+    }
+  ],
+  "backbone_included": false,
+  "dataset_raw_files_included": false,
+  "scaling_json_replay_exact": true
+}
